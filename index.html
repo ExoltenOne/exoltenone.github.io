@@ -1,0 +1,39 @@
+---
+layout: default
+title: "The Code Manual"
+---
+
+<!-- Content -->
+  <div id="content">
+
+    {% for page in paginator.posts %}
+
+    <!-- Post -->
+      <article class="is-post">
+        <header>
+          <h2><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h2>
+        </header>
+        <h3>{{ page.date | date_to_string }}</h3>
+        {{ page.excerpt }}
+        <ul class="actions">
+          <li><a href="{{ site.baseurl }}{{ page.url }}" class="button button-icon icon icon-file">Permalink</a></li>
+        </ul>
+      </article>
+
+    {% endfor %}
+  </div>
+
+  <!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+    {% else %}
+      <span class="previous">Previous</span>
+    {% endif %}
+    <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    {% else %}
+      <span class="next ">Next</span>
+    {% endif %}
+  </div>
