@@ -14,11 +14,11 @@
 		{% assign category = site.my_categories | where: "slug", page.category %}
 		{% assign category = category[0] %}
 		{% if category %}
-			{% capture category_content %}<a class="label" href="{{ category.url }}" style="background-color:{{ category.color }}">{{ category.name }}</a>{% endcapture %}
+			{% capture category_content %}Category: <a class="label" href="{{ category.url }}">{{ category.name }}</a>{% endcapture %}
 		{% endif %}
 
 		{% if page.tags.size > 0 %}
-			{% capture tags_content %} with <span class="icon icon-tag{% if post.tags.size > 1 %}s{% endif %}"></span>: {% endcapture %}
+			{% capture tags_content %} Tag{% if post.tags.size > 1 %}s{% endif %}: {% endcapture %}
 			{% for post_tag in page.tags %}
 				{% assign tag = site.my_tags | where: "slug", post_tag %}
 				{% if tag %}
@@ -45,14 +45,10 @@
 												<h2>{{ page.title }}</h2>
 											</header>
 											<!-- <span class="image image-full"><img src="http://placekitten.com/g/784/303" alt="" /></span> -->
-											<h3>{{ page.date | date_to_string }}</h3>
+											<h3>{{ page.date | date_to_string }} | {{ category_content }} | {{ tags_content }}</h3>
 											{{ content }}
 
 										</article>
-
-										<p class="m-t-3 text-muted font-italic">
-											<small>Posted{% if category_content %} in </small>{{ category_content }}<small>{% endif %}{{ tags_content }}</small>
-										</p>
 
 								</div>
 
