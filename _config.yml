@@ -7,8 +7,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #excerpt_separator: "<!--more-->"
 
-#Debub flags
+#Debug flags
 future: false
+
+# Google services
+google_analytics: UA-88818077-1
 
 owner: "Krzysztof Madej"
 email: "madko19@gmail.com"
