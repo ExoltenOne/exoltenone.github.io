@@ -1,10 +1,14 @@
 # Note! If you're using jekyll serve --watch to run a server, you'll need to restart after any changes here
 name: "The Code Manual"
 description: "It always seems impossible until its done - Nelson Mandela"
-highlighter: rouge
+# markdown:    kramdown
+highlighter: pygments
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #excerpt_separator: "<!--more-->"
+
+#Debub flags
+future: false
 
 owner: "Krzysztof Madej"
 email: "madko19@gmail.com"
@@ -14,7 +18,7 @@ facebook: ""
 linkedin: "https://pl.linkedin.com/in/krzysztof-madej"
 # the following really long number is what you find in https://plus.google.com/your-really-long-id/posts
 googleplus: 111111111111111111
-location: Warsaw, Poland
+location:
 phone: 555-555-5555
 skype: your.username
 

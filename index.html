@@ -16,7 +16,7 @@ title: "The Code Manual"
         <h3>{{ page.date | date_to_string }}</h3>
         {{ page.excerpt }}
         <ul class="actions">
-          <li><a href="{{ site.baseurl }}{{ page.url }}" class="button button-icon icon icon-file">Permalink</a></li>
+          <li><a href="{{ site.baseurl }}{{ page.url }}" class="button button-icon icon icon-file">Read more</a></li>
         </ul>
       </article>
 
@@ -24,6 +24,7 @@ title: "The Code Manual"
   </div>
 
   <!-- Pagination links -->
+  {% if paginator.total_pages > 1 %}
   <div class="pagination">
     {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
@@ -37,3 +38,4 @@ title: "The Code Manual"
       <span class="next ">Next</span>
     {% endif %}
   </div>
+  {% endif %}

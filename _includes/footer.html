@@ -36,9 +36,11 @@
                   <p>You can find me by:</p>
                   <div class="row">
                     <ul class="icons 6u">
+                      {% if site.location == blank %}
                       <li class="icon icon-home">
                         {{ site.location }}
                       </li>
+                      {% endif %}
                       {% if site.skype == blank %}
                       <li class="icon icon-skype">
                         {{ site.skype }}

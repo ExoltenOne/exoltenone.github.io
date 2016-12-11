@@ -4,7 +4,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	{% include head.html %}
 
 	<body class="left-sidebar">
@@ -47,6 +47,15 @@
 											<!-- <span class="image image-full"><img src="http://placekitten.com/g/784/303" alt="" /></span> -->
 											<h3>{{ page.date | date_to_string }} | {{ category_content }} | {{ tags_content }}</h3>
 											{{ content }}
+
+											{% if page.links != blank %}
+											<h5 class="references">Links</h5>
+											<ul class = "bullet-list">
+												{% for link in page.links %}
+													<li><a href="{{link.address}}">{{link.name}}</a></li>
+												{% endfor %}
+											</ul>
+											{% endif %}
 
 										</article>
 

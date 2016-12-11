@@ -6,7 +6,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 This is Strongly Typed, a new site template with a minimal, semi-retro
 look (inspired by old instruction manuals) and, as you might guess from its
 name, a strong emphasis on type. It's fully responsive, built on HTML5/CSS3,
-and includes styling for all basic page elements. Demo images* are courtesy of 
+and includes styling for all basic page elements. Demo images* are courtesy of
 regularjane, an incredibly talented photographer friend of mine. Be sure to
 check out more of her work over at deviantART:
 
@@ -27,7 +27,7 @@ Credits
 
 	Images (Demo Only)
 		regularjane (http://regularjane.deviantart.com/)
-		
+
 	Icons
 		Font Awesome (http://fortawesome.github.com/Font-Awesome/)
 		Font Awesome More (http://gregoryloucas.github.com/Font-Awesome-More/)
@@ -38,4 +38,4 @@ Credits
 		Dropotron (n33.co)
 		skel.min.js + skel-ui.min.js (n33.co)
 
-bundle exec jekyll serve
+bundle exec jekyll serve --future true

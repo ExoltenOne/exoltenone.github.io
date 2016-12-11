@@ -1,5 +1,77 @@
 @charset 'UTF-8';
 
+article img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+article p {
+	margin-bottom: 1em;
+}
+
+article h4 {
+	margin-top: 1em;
+}
+
+.references {
+	border-top: solid 1px #e5e5e5
+}
+
+/* Code */
+code,
+pre {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem 0 1rem;
+  font-size: .8rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+
+/* Pygments via Jekyll */
+.highlight {
+  margin-bottom: 2px;
+	margin-top: 2px;
+  border-radius: 4px;
+}
+.highlight pre {
+  margin-bottom: 0;
+}
+/* */
+
+.bullet-list {
+    list-style: disc;
+    margin: 0 0 1em 0;
+    padding-left: 1em;
+		margin-left: 1em;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
 @font-face
 {
 	font-family: 'FontAwesome';
@@ -42,7 +114,7 @@
 	body,input,textarea,select
 	{
 		font-family: 'Source Sans Pro';
-		font-weight: 300;
+		font-weight: 400;
 		color: #777;
 	}
 
