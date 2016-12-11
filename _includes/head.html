@@ -32,6 +32,8 @@
         <script src="{{ site.baseurl }}/js/config.js"></script>
         <script src="{{ site.baseurl }}/js/skel.min.js"></script>
 
+        <span class="{{ jekyll.environment }}"></span>
+
         {% if jekyll.environment == 'production' %}
           {% include analytics.html %}
         {% endif %}
