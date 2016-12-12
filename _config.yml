@@ -2,7 +2,7 @@
 name: "The Code Manual"
 description: "It always seems impossible until its done - Nelson Mandela"
 # markdown:    kramdown
-highlighter: pygments
+highlighter: rouge
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #excerpt_separator: "<!--more-->"
