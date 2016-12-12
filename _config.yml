@@ -13,8 +13,11 @@ future: false
 # Google services
 google_analytics: UA-88818077-1
 
+# Disqus post comments
+disqus_shortname: krzysztof_madej
+
 owner: "Krzysztof Madej"
-email: "madko19@gmail.com"
+email: "krzysztof.madej.1987@gmail.com"
 twitter: ""
 github: "ExoltenOne"
 facebook: ""
