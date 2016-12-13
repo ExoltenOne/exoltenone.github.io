@@ -14,7 +14,7 @@ future: false
 google_analytics: UA-88818077-1
 
 # Disqus post comments
-disqus_shortname: krzysztof_madej
+disqus_shortname: thecodemanual
 
 owner: "Krzysztof Madej"
 email: "krzysztof.madej.1987@gmail.com"
