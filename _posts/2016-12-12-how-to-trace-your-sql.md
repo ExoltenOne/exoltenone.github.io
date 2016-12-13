@@ -58,7 +58,7 @@ links:
 </a>
 
 <p>
-  Have you ever thought how many store procedures your code is calling? Have you tracked them to find duplicate calls? Maybe there is a place which could be optimised but going through the code without information what procedure you are looking for is difficult or at least time consuming. There is probably a many ways to do that but here I'll find a way with F#.
+  Have you ever thought how many store procedures your code is calling? Have you tracked them to find duplicate calls? Maybe there is a place which could be optimized but going through the code without information what procedure you are looking for is difficult or at least time consuming. There is probably a many ways to do that but here you'll find a way with F#.
 </p>
 <!--more-->
 
