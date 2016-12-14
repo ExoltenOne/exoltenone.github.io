@@ -7,7 +7,7 @@
               <h2>Questions or comments? <strong>Get in touch:</strong></h2>
             </header>
             <div class="row">
-              <div class="6u">
+              <div class="6u -1u">
                 <section>
                   <form method="post" action="https://formspree.io/{{site.email}}">
                     <div class="row half">
@@ -31,30 +31,9 @@
                   </form>
                 </section>
               </div>
-              <div class="6u">
+              <div class="4u -1u">
                 <section>
-                  <p>You can find me by:</p>
-                  <div class="row">
-                    <ul class="icons 6u">
-                      {% if site.location == blank %}
-                      <li class="icon icon-home">
-                        {{ site.location }}
-                      </li>
-                      {% endif %}
-                      {% if site.skype == blank %}
-                      <li class="icon icon-skype">
-                        {{ site.skype }}
-                      </li>
-                      {% endif %}
-                      {% if site.phone == blank %}
-                      <li class="icon icon-phone">
-                        {{site.phone}}
-                      </li>
-                      {% endif %}
-                      <li class="icon icon-envelope">
-                        <a href="mailto:{{site.email}}">{{site.email}}</a>
-                      </li>
-                    </ul>
+                    <h3>You can find me by:</h3>
                     <ul class="icons 6u">
 
                       {% if site.twitter == blank %}
@@ -69,6 +48,10 @@
 
                       <li class="icon icon-linkedin">
                         <a href="{{site.linkedin}}">{{site.owner}}</a>
+                      </li>
+
+                      <li class="icon icon-envelope">
+                        <a href="mailto:{{site.email}}">{{site.owner}}</a>
                       </li>
 
                       {% if site.facebook == blank %}

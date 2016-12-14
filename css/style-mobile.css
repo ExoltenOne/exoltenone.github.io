@@ -33,7 +33,7 @@
 	}
 
 	/* Sections/Articles */
-	
+
 		section,
 		article
 		{
@@ -58,19 +58,19 @@
 		.image
 		{
 		}
-			
+
 			.image-left
 			{
 				width: 40%;
 			}
-			
+
 			.image-full
 			{
 				margin: 0 0 2em 0;
 			}
 
 	/* Buttons */
-		
+
 		.button
 		{
 			letter-spacing: 2px;
@@ -113,7 +113,7 @@
 		form
 		{
 		}
-		
+
 			form input.text,
 			form select,
 			form textarea
@@ -191,12 +191,12 @@
 			border-top: solid 1px #3c3c3c;
 			padding: 0 1em 0 1em;
 		}
-		
+
 			#navPanel .link:first-child
 			{
 				border-top: 0;
 			}
-			
+
 			#navPanel .link.depth-0
 			{
 				font-weight: 600;
@@ -221,11 +221,11 @@
 	.is-feature
 	{
 	}
-	
+
 	.is-excerpt
 	{
 	}
-	
+
 		.is-excerpt .date
 		{
 			display: block;
@@ -234,7 +234,7 @@
 			margin: 0 auto 2.5em auto;
 			text-align: center;
 		}
-	
+
 	.is-highlight
 	{
 	}
@@ -252,17 +252,17 @@
 	{
 		padding: 3em 20px 3em 20px;
 	}
-	
+
 	#banner-wrapper
 	{
 		padding: 2em 0 2em 0;
 	}
-	
+
 	#main-wrapper
 	{
 		padding: 3em 20px 3em 20px;
 	}
-	
+
 	#footer-wrapper
 	{
 		padding: 4em 20px 3em 20px;
@@ -276,14 +276,14 @@
 	{
 		padding: 6em 0 4em 0;
 	}
-	
+
 		#header h1
 		{
 			font-size: 2em;
 			letter-spacing: 8px;
 			line-height: 1.25em;
 		}
-		
+
 		#header p
 		{
 			margin: 1.25em 0 0 0;
@@ -302,12 +302,12 @@
 /*********************************************************************************/
 /* Banner                                                                        */
 /*********************************************************************************/
-	
+
 	#banner
 	{
 		padding: 5em 20px 5em 20px;
 		margin: 0 !important;
-	}	
+	}
 
 		#banner p
 		{
@@ -315,16 +315,16 @@
 			line-height: 1.25em;
 			letter-spacing: 3px;
 		}
-		
+
 			#banner p br
 			{
 				display: none;
 			}
-	
+
 /*********************************************************************************/
 /* Content                                                                       */
 /*********************************************************************************/
-	
+
 	#content
 	{
 	}
@@ -335,18 +335,18 @@
 			margin: 4em 0 0 0 !important;
 			padding: 4em 0 0 0 !important;
 		}
-		
+
 		#content > section:first-child,
 		#content > article:first-child
 		{
 			margin: 0 !important;
 			padding: 0 !important;
 		}
-	
+
 /*********************************************************************************/
 /* Sidebar                                                                       */
 /*********************************************************************************/
-	
+
 	#sidebar
 	{
 		border-top: solid 2px #e5e5e5;
@@ -361,7 +361,7 @@
 			margin: 4em 0 0 0 !important;
 			padding: 4em 0 0 0 !important;
 		}
-		
+
 		#sidebar > section:first-child,
 		#sidebar > article:first-child
 		{
@@ -375,6 +375,6 @@
 
 	#copyright
 	{
-		margin-top: 2em;
+		margin-top: 0em;
 		padding-top: 2em;
 	}

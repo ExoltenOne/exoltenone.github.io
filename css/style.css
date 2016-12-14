@@ -1,5 +1,45 @@
 @charset 'UTF-8';
 
+/*  small footer */
+
+section.icons
+{
+}
+
+	section.icons > a
+	{
+		position: relative;
+		padding: 2em 0 0 3em;
+		border-bottom: 0px;
+	}
+
+	/*				top: 1.5em; should be set depending on the screen size */
+	section.icons > a > i:before
+	{
+		position: absolute;
+		left: 0;
+		top: 1.5em;
+		display: block;
+		background: #878787;
+		color: #e4e4e4;
+		width: 1.65em;
+		height: 1.65em;
+		border-radius: 1.65em;
+		line-height: 1.65em;
+		text-align: center;
+		box-shadow: 0.125em 0.175em 0 0 rgba(0,0,0,0.125);
+	}
+
+	section:icons > a:first-child
+	{
+		padding-top: 0;
+	}
+
+		section.icons > a > i:first-child:before
+		{
+			top: 0;
+		}
+
 article img {
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -364,6 +404,7 @@ img.center {
 				padding: 2em 0 0 3em;
 			}
 
+ 			/*				top: 1.5em; should be set depending on the screen size */
 			ul.icons > li:before
 			{
 				position: absolute;
