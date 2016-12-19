@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How to show your SQL"
-date:   2016-12-19 21:00:00
+date:   2016-12-19 20:00:00
 category: programming
 tags: [fsharp,sql]
 excerpt_separator: <!--more-->
