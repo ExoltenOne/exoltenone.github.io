@@ -64,7 +64,7 @@ links:
 
 <h4>Record your SQL</h4>
 <p>
-  To do that we need to have a piece of code using store procedures. In your cases, it will be your own code but here to present end-to-end scenario I will use code written intentionally for this. You can find this code on <a href="https://github.com/ExoltenOne/TheCodeManual/tree/master/SqlProfilerTraceAnalyzer">GitHub</a>. Application AdventureWorksTraceGenerator uses <a href="https://msftdbprodsamples.codeplex.com/downloads/get/880661">AdventureWorks 2014</a> database to execute procedures: [HumanResources].[uspUpdateEmployeeHireInfo], [dbo].[uspGetManagerEmployees] and [dbo].[uspGetBillOfMaterials]. The first sproc is executed three times per loop iteration, the second - one and the third - two times. The loop is set to 1000 iterations and having this in mind we expect to have the first sproc executed 3000 times, the second 1000 times and the last 2000 times.
+  To do that we need to have a piece of code using store procedures. In your cases, it will be your own code but here to present end-to-end scenario I will use code written intentionally for this. You can find this code on <a href="https://github.com/ExoltenOne/TheCodeManual/tree/master/SqlProfilerTraceAnalyzer/HowToTraceYourSql">GitHub</a>. Application AdventureWorksTraceGenerator uses <a href="https://msftdbprodsamples.codeplex.com/downloads/get/880661">AdventureWorks 2014</a> database to execute procedures: [HumanResources].[uspUpdateEmployeeHireInfo], [dbo].[uspGetManagerEmployees] and [dbo].[uspGetBillOfMaterials]. The first sproc is executed three times per loop iteration, the second - one and the third - two times. The loop is set to 1000 iterations and having this in mind we expect to have the first sproc executed 3000 times, the second 1000 times and the last 2000 times.
 </p>
 
 <p>
@@ -72,7 +72,7 @@ links:
   <br/>
   <img class="center" src="{{ site.baseurl }}/images/sql_profiler.png" alt="The screen from SQL Profiler tool with recorded SQL calls" />
   <br/>
-  Once your application finishes hitting the database, please stop recording be clicking 'Pause Selected Trace' and then save trace (File -> Save As -> Trace XML File...) so finally you will get a file like <a href="https://github.com/ExoltenOne/TheCodeManual/blob/master/SqlProfilerTraceAnalyzer/SqlProfilerTraceAnalyzer/trace.xml">this</a>. Below you'll find part of this file just to make you easier to catch the structure of it.
+  Once your application finishes hitting the database, please stop recording be clicking 'Pause Selected Trace' and then save trace (File -> Save As -> Trace XML File...) so finally you will get a file like <a href="https://github.com/ExoltenOne/TheCodeManual/blob/master/SqlProfilerTraceAnalyzer/HowToTraceYourSql/SqlProfilerTraceAnalyzer/trace.xml">this</a>. Below you'll find part of this file just to make you easier to catch the structure of it.
 </p>
 
 {% highlight xml %}
