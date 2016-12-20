@@ -4,6 +4,11 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
+.article-image img {
+   width: 75%;
+}
+
 section.icons
 {
 	clear: both;
@@ -92,7 +97,7 @@ section.icons:first-child
 		{
 			letter-spacing: 2px;
 			display: block;
-			padding: 1em 0 1em 0;
+			padding: 1em 1em 1em 1em;
 		}
 
 	/* Lists */

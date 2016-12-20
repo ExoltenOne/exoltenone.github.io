@@ -313,17 +313,17 @@ let matchResult argument result =
   So finally if we run the application with the argument '--chart bar' we get:
 </p>
 
-<figure>
+<figure class="article-image">
   <img src="{{ site.baseurl }}/images/chart_avg.jpeg" alt="The chart with time average of store procedures" />
   <figcaption>Fig 1. - The chart with time average of store procedures</figcaption>
 </figure>
 
-<figure>
+<figure class="article-image">
   <img src="{{ site.baseurl }}/images/chart_count.jpeg" alt="The chart with count of store procedures" />
   <figcaption>Fig 2. - The chart with count of store procedures</figcaption>
 </figure>
 
-<figure>
+<figure class="article-image">
   <img src="{{ site.baseurl }}/images/chart_sum.jpeg" alt="The chart with time sum of store procedures" />
   <figcaption>Fig 3. - The chart with time sum of store procedures</figcaption>
 </figure>
