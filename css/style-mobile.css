@@ -4,6 +4,23 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+section.icons
+{
+	clear: both;
+	margin: 2em 0 2em 0 !important;
+	text-align: center;
+}
+
+section.icons > :first-child
+{
+	margin-top: 20px !important;
+}
+
+section.icons:first-child
+{
+	margin-top: 20px !important;
+}
+
 /*********************************************************************************/
 /* Basic                                                                         */
 /*********************************************************************************/
