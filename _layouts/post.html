@@ -59,9 +59,11 @@
 
 										</article>
 
-										{% if site.disqus_shortname %}
-										  {% include disqus_comments.html %}
-										{% endif %}
+										{% if jekyll.environment == 'production' %}
+											{% if site.disqus_shortname %}
+												{% include disqus_comments.html %}
+											{% endif %}
+						        {% endif %}
 
 								</div>
 

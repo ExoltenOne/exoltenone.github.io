@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Trace report</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <!--<link rel="stylesheet" href="ghpages-materialize.css">-->
+
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
+        .header {
+             color: #ee6e73;
+             font-weight: 300;
+        }
+        .chart > div {
+            width: auto !important;
+            height: auto !important;
+        }
+    </style>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart", "table"] });
+    </script>
+
+</head>
+<body>
+<div class="container">
+    <h3 class="header center">Trace report</h3>
+    <div class="row">
+        <div class="col l12 m12 chart">
+            <script type="text/javascript">
+    google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Store procedure name" ,"label": "Store procedure name" }, {"type": "number" ,"id": "Count" ,"label": "Count" }, {"type": "number" ,"id": "Total time [ms]" ,"label": "Total time [ms]" }, {"type": "number" ,"id": "Average time [us]" ,"label": "Average time [us]" }], "rows" : [{"c" : [{"v": "HumanResources.uspUpdateEmployeeHireInfo"}, {"v": 2000}, {"v": 775.252}, {"v": 387.626}]}, {"c" : [{"v": "dbo.uspGetBillOfMaterials"}, {"v": 3000}, {"v": 1457.625}, {"v": 485.875}]}, {"c" : [{"v": "dbo.uspGetManagerEmployees"}, {"v": 1000}, {"v": 1222.58}, {"v": 1222.58}]}, {"c" : [{"v": "sp_reset_connection"}, {"v": 5999}, {"v": 80.208}, {"v": 13.3702283713952}]}]});
+
+                var options = {"legend":{"position":"right"},"width":1280,"showRowNumber":true} 
+
+                var chart = new google.visualization.Table(document.getElementById('2a6c9f6b-2b2b-4949-a42f-88fc784cf427'));
+                chart.draw(data, options);
+            }
+</script>
+<div id="2a6c9f6b-2b2b-4949-a42f-88fc784cf427" style="width: 900px; height: 500px;"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col l6 m12 chart">
+            <script type="text/javascript">
+    google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Count" ,"label": "Count" }], "rows" : [{"c" : [{"v": "HumanResources.uspUpdateEmployeeHireInfo"}, {"v": 2000}]}, {"c" : [{"v": "dbo.uspGetBillOfMaterials"}, {"v": 3000}]}, {"c" : [{"v": "dbo.uspGetManagerEmployees"}, {"v": 1000}]}, {"c" : [{"v": "sp_reset_connection"}, {"v": 5999}]}]});
+
+                var options = {"backgroundColor":{"fill":"#fcfcfc"},"colors":["#42A5F5"],"height":480,"legend":{"position":"right"},"orientation":"horizontal","title":"Store procedures","width":640} 
+
+                var chart = new google.visualization.BarChart(document.getElementById('33f59d2d-b259-409a-a53a-f8783af4da37'));
+                chart.draw(data, options);
+            }
+</script>
+<div id="33f59d2d-b259-409a-a53a-f8783af4da37" style="width: 900px; height: 500px;"></div>
+        </div>
+        <div class="col l6 m12 chart">
+            <script type="text/javascript">
+    google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Time [ms]" ,"label": "Time [ms]" }], "rows" : [{"c" : [{"v": "HumanResources.uspUpdateEmployeeHireInfo"}, {"v": 775.252}]}, {"c" : [{"v": "dbo.uspGetBillOfMaterials"}, {"v": 1457.625}]}, {"c" : [{"v": "dbo.uspGetManagerEmployees"}, {"v": 1222.58}]}, {"c" : [{"v": "sp_reset_connection"}, {"v": 80.208}]}]});
+
+                var options = {"backgroundColor":{"fill":"#fcfcfc"},"colors":["#42A5F5"],"height":480,"legend":{"position":"right"},"orientation":"horizontal","title":"Store procedures - Total time","width":640} 
+
+                var chart = new google.visualization.BarChart(document.getElementById('05f34661-3568-4b30-b146-003da4302d1e'));
+                chart.draw(data, options);
+            }
+</script>
+<div id="05f34661-3568-4b30-b146-003da4302d1e" style="width: 900px; height: 500px;"></div>
+        </div>
+        <div class="col l12 m12 chart">
+            <script type="text/javascript">
+    google.setOnLoadCallback(drawChart);
+            function drawChart() {
+                var data = new google.visualization.DataTable({"cols": [{"type": "string" ,"id": "Column 1" ,"label": "Column 1" }, {"type": "number" ,"id": "Time [us]" ,"label": "Time [us]" }], "rows" : [{"c" : [{"v": "HumanResources.uspUpdateEmployeeHireInfo"}, {"v": 387.626}]}, {"c" : [{"v": "dbo.uspGetBillOfMaterials"}, {"v": 485.875}]}, {"c" : [{"v": "dbo.uspGetManagerEmployees"}, {"v": 1222.58}]}, {"c" : [{"v": "sp_reset_connection"}, {"v": 13.3702283713952}]}]});
+
+                var options = {"backgroundColor":{"fill":"#fcfcfc"},"colors":["#42A5F5"],"height":480,"legend":{"position":"right"},"orientation":"horizontal","title":"Store procedures - Average time","width":640} 
+
+                var chart = new google.visualization.BarChart(document.getElementById('88e73d4b-46db-4c48-871b-ab2c53431d3b'));
+                chart.draw(data, options);
+            }
+</script>
+<div id="88e73d4b-46db-4c48-871b-ab2c53431d3b" style="width: 900px; height: 500px;"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+</body>
+</html>
