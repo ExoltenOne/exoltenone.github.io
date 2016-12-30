@@ -34,6 +34,10 @@ paginate: 5
 paginate_path: '/blog/page/:num/'
 timezone: Europe/Berlin
 
+sass:
+   sass_dir: _sass
+   style: compressed
+
 # Where things are
 collections:
   my_categories:

@@ -1,25 +1,23 @@
-<!-- Header Wrapper -->
-    <div id="header-wrapper">
+<!-- Header -->
+<header id="main-header" class="text-center">
 
-      <!-- Header -->
-      <div id="header" class="container">
+  <!-- Nav -->
 
-        <!-- Logo -->
-        <h1 id="logo"><a href="/">{{ site.name }} </a></h1>
-        <p>{{site.description}}</p>
+  <nav class="menu-centered show-for-medium">
+    <ul class="menu">
+      <li><a class="icon icon-home" href="{{ site.baseurl }}/index.html"><i class="fi-home"></i> <span>Home</span></a></li>
+      <li><a class="icon icon-tags" href="{{ site.baseurl }}/tags"><i class="fi-pricetag-multiple"></i> <span>Tags</span></a></li>
+      <li><a class="icon icon-user" href="{{ site.baseurl }}/about"><i class="fi-paw"></i> <span>About</span></a></li>
+      <!-- <li><a class="icon icon-user" href="{{ site.baseurl }}/about"><i class="fi-paw"></i> <span>Readings</span></a></li>
+      <li><a class="icon icon-user" href="{{ site.baseurl }}/about"><i class="fi-paw"></i> <span>Projects</span></a></li> -->
+      <!--
+      <li><a class="icon icon-sitemap" href="no-sidebar.html"><span>No Sidebar</span></a></li>
+       -->
+    </ul>
+  </nav>
 
-        <!-- Nav -->
-        <nav id="nav">
-          <ul>
-            <li><a class="icon icon-home" href="{{ site.baseurl }}/index.html"><span>Home</span></a></li>
-            <li><a class="icon icon-tags" href="{{ site.baseurl }}/tags"><span>Tags</span></a></li>
-            <li><a class="icon icon-user" href="{{ site.baseurl }}/about"><span>About</span></a></li>
-            <!--
-            <li><a class="icon icon-sitemap" href="no-sidebar.html"><span>No Sidebar</span></a></li>
-             -->
-          </ul>
-        </nav>
+  <!-- Logo -->
+  <h1 id="logo"><a href="/">{{ site.name }} </a></h1>
+  <p>{{site.description}}</p>
 
-      </div>
-
-    </div>
+</header>

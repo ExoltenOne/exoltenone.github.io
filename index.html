@@ -15,9 +15,7 @@ title: "The Code Manual"
         </header>
         <h3>{{ page.date | date_to_string }}</h3>
         {{ page.excerpt }}
-        <ul class="actions">
-          <li><a href="{{ site.baseurl }}{{ page.url }}" class="button button-icon icon icon-file">Read more</a></li>
-        </ul>
+        <a href="{{ site.baseurl }}{{ page.url }}" class="button radius"><i class="fi-page"></i>Read more</a>
       </article>
 
     {% endfor %}
