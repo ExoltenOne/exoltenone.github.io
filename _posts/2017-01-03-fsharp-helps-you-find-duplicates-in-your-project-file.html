@@ -1,0 +1,180 @@
+---
+layout: post
+title:  "FSharp helps you find duplicates in your project file"
+date:   2017-01-03 04:00:00
+category: programming
+tags: [fsharp]
+excerpt_separator: <!--more-->
+links:
+  - name: The article image
+    address: https://pixabay.com/pl/szturmowiec-gwiezdne-wojny-lego-1343772/
+  - name: The XML Type Provider library page
+    address: http://fsharp.github.io/FSharp.Data/library/XmlProvider.html
+  - name: My GitHub account with the code
+    address: https://github.com/ExoltenOne/TheCodeManual/tree/master/SqlProfilerTraceAnalyzer/HowToShowYourSql
+---
+
+<a href="{{ site.baseurl }}{{page.url}}" class="image image-full">
+  <img src="{{ site.baseurl }}/images/duplicates.jpg" alt="The image with Star Wars Troopers" />
+</a>
+
+<p>
+  On my daily work, I deal with a complex solution counting more than 100 projects. As probably like the most of you, we have branches dedicated to production, testing and development. In such environment, it is a normal thing that you have to merge your changes from one branch to another. And sometimes, not everything will go smoothly. Then, when someone overwrites merged changes, roll back becomes problematic. So when you'll find yourself in that situation, and you'll find out that this bad merge generated duplicates in your project files, FSharp could be a remedy. We'll write today a piece of code, which locates for you those duplicates. Of course, this is not necessary for compiling files because compilator generates an error for that case, but it could be easier to get all duplicates at once - compiling and non-compiling.
+</p>
+
+<!--more-->
+
+<h4>XML Type Provider</h4>
+<p>
+  A C# project file is a standard XML file, which we could read by XML Type Provider. So let's create a F# Console project named ProjectFileAnalyzer.DuplicateFinder. Next, we will install NuGet package with FSharp.Data containing XML Type provider. To do that please, run below command in Package Manager Console.
+</p>
+
+{% highlight html %}
+  Install-Package FSharp.Data.XMLProvider
+{% endhighlight %}
+
+<h4>Tested CSharp project</h4>
+<p>
+  Before we start writing real code we should have a test project. We'll create one and we'll call it ProjectFileAnalyzer.DuplicatedFilesTestCase. The project should contain a non-compiling file (like a text file) and we should also edit csproj file to duplicate this file. You'll find an example on next listing (I removed uninteresting parts).
+</p>
+
+{% highlight xml %}
+  <?xml version="1.0" encoding="utf-8"?>
+  <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile1.txt" />
+    <Content Include="TextFile2.txt" />
+    <Content Include="TextFile2.txt" />
+    <Content Include="TextFile2.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  </Project>
+{% endhighlight %}
+
+<p>
+  We should add this csproj to FSharp project because we need an example for XML Type Provider. Additionally, I set 'Copy to Output Directory' to value 'Copy if newer', but this isn't mandatory. I did it only for this demo, just to make it easier.
+</p>
+
+<h4>Duplicates finder</h4>
+<p>
+  Our first step is to define a type representing csproj file. And as you probably know this is a one-liner.
+</p>
+
+{% highlight fsharp %}
+  type solution = XmlProvider<"ProjectFileAnalyzer.DuplicatedFilesTestCase.csproj">
+{% endhighlight %}
+
+<p>
+  Now we should extract Content and Compile files from ItemGroups. We'll use for that Array.collect function which maps from an array of type A to an array of type B. Array.collect doesn't simply map from type A to type B, but it maps from type A to an array of type B and then join all B arrays. It sounds complicated but in fact, it isn't. We'll have to provide a mapping function which takes ItemGroup and return all Content and Compile values. Afterwards, we'll extract values from Include attribute.
+</p>
+
+{% highlight fsharp %}
+let getContentFiles (items:solution.ItemGroup[]) =
+            items
+                |> Array.collect ( fun x -> x.Contents)
+                |> Array.map ( fun x -> x.Include)
+
+let getCompileFiles (items:solution.ItemGroup[]) =
+            items
+                |> Array.collect ( fun x -> x.Compiles)
+                |> Array.map ( fun x -> x.Include)
+{% endhighlight %}
+
+<p>
+  We are getting closer. This time we'll write a function, which finds duplicates in one solution using getContentFiles or getCompileFiles called from this moment selectors. To do that, we need to load csproj file, get content or compile files, group them and then find those groups which Length is greater than one.
+</p>
+
+{% highlight fsharp %}
+let findDuplicates' (selector:solution.ItemGroup[] -> string[]) (projectFile:string) =
+    let sln = solution.Load projectFile
+    let duplicates = sln.ItemGroups
+                        |> selector
+                        |> Array.groupBy ( fun x -> x)
+                        |> Array.filter ( fun (_,col) -> col.Length > 1 )
+                        |> Array.map fst
+    print projectFile duplicates
+{% endhighlight %}
+
+<p>
+  And that's it, FSharp made it really easy. But now, we dealt with only one project, and it won't be convenient for big solutions. Luckily, adapting the project won't be a problem. I'm not going into details because the code should be clear enough to understand, what the code is doing.
+</p>
+
+{% highlight fsharp %}
+let findDuplicates csprojs =
+
+    let print (duplicates:string*string[]) =
+        if((duplicates |> snd).Length > 0) then
+            Console.ForegroundColor <- ConsoleColor.DarkRed
+            printfn "%A" (duplicates |> fst)
+            Console.ForegroundColor <- ConsoleColor.White
+            (duplicates |> snd)|> Seq.iter ( fun x -> printfn "\t%A" x)
+
+    let findDuplicates' (selector:solution.ItemGroup[] -> string[]) (projectFile:string) =
+        let sln = solution.Load projectFile
+        let duplicates = sln.ItemGroups
+                            |> selector
+                            |> Array.groupBy ( fun x -> x)
+                            |> Array.filter ( fun (_,col) -> col.Length > 1 )
+                            |> Array.map fst
+        (projectFile,duplicates)
+
+    csprojs |> Seq.map (findDuplicates' getContentFiles) |> Seq.iter print
+    csprojs |> Seq.map (findDuplicates' getCompileFiles) |> Seq.iter print
+{% endhighlight %}
+
+<p>
+  Few paragraphs above we assumed that csproj file paths have been loaded and now it is a good time to write code for this. The location of the csproj files folder could be provided by command line arguments and otherwise, a current location will be used.
+</p>
+
+{% highlight fsharp %}
+let getProjectFiles argv =
+    let getArgv (argv:string[]) =
+                                match argv with
+                                | null | [||]  -> [| Directory.GetCurrentDirectory() |]
+                                | _ -> argv
+
+    let getCsprojFileNames rootPath =
+        let dir = new DirectoryInfo(rootPath)
+        dir.GetFiles( "*", SearchOption.AllDirectories) |> Array.filter (fun x -> x.Extension.Contains("csproj" )) |> Array.map (fun x -> x.FullName)
+
+    argv |> getArgv |> Array.map ( fun x -> getCsprojFileNames x)
+{% endhighlight %}
+
+<p>
+  And finally, our last line takes this shape:
+</p>
+
+{% highlight fsharp %}
+argv |> getProjectFiles |> Array.iter findDuplicates
+{% endhighlight %}
+
+<p>
+  and as the result we get:
+</p>
+
+<figure class="article-image">
+  <img src="{{ site.baseurl }}/images/duplicates_result.png" alt="The console with printed infomation about duplicated files" />
+  <figcaption>Fig 1. - The console with printed infomation about duplicated files.</figcaption>
+</figure>
+
+<h4>Summary</h4>
+<p>
+  In this post, I showed you how FSharp could help you with bad merges. Of course, this is not a perfect way of dealing with such issue, but at least it is effective. I hope that this post would encourage you to experiment with FSharp with your tasks.
+</p>
