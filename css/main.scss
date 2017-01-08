@@ -1,12 +1,14 @@
 ---
 ---
 
-$primary-color: #ed786a;
-$secondary-color: #ed786a;
+@import 'variables';
+
+$primary-color: $tcm-red;
+$secondary-color: $tcm-red;
 $dropdownmenu-background: orange;
 
 $titlebar-background: white !default;
-$titlebar-color: #ed786a !default;
+$titlebar-color: $tcm-red !default;
 $offcanvas-background: #444;
 
 $header-padding-top-small: 2em;
@@ -33,8 +35,8 @@ $button-radius: 4px;
 // @import "../css/fonts/foundation-icons.css";
 
 .menu-icon::after {
-    background: #ed786a;
-    box-shadow: 0 7px 0 #ed786a, 0 14px 0 #ed786a;
+    background: $tcm-red;
+    box-shadow: 0 7px 0 $tcm-red, 0 14px 0 $tcm-red;
 }
 
 main {
@@ -61,7 +63,7 @@ main {
   h1 {
     font-family: 'Arvo';
     font-weight: 700;
-    color: #ed786a;
+    color: $tcm-red;
     text-shadow: 0.05em 0.075em 0 rgba(0,0,0,0.1);
     letter-spacing: 13px;
     text-transform: uppercase;
@@ -75,11 +77,11 @@ main {
       border: 0;
 
       &:hover {
-        color: #ed786a;
+        color: $tcm-red;
       }
 
       &:focus {
-        color: #ed786a;
+        color: $tcm-red;
       }
     }
   }
@@ -91,7 +93,7 @@ main {
 
     text-transform: uppercase;
     font-weight: 400;
-    color: #888;
+    color: $tcm-dark-grey;
     font-family: 'Source Sans Pro';
     text-align: center;
 
@@ -125,14 +127,14 @@ footer {
     letter-spacing: 4px;
     line-height: 1.75em;
     text-transform: uppercase;
-    color: #888;
+    color: $tcm-dark-grey;
     margin-bottom: 0.5em;
 
     @include breakpoint (small only)  {
       font-size: 1.2em;
       font-weight: 600;
       text-transform: uppercase;
-      color: #888;
+      color: $tcm-dark-grey;
     }
   }
 
@@ -189,7 +191,7 @@ nav {
         text-decoration: none;
         text-transform: uppercase;
         font-weight: 400;
-        color: #777;
+        color: $tcm-grey;
         outline: 0;
         padding: 0.7em 0.7em;
 
@@ -255,7 +257,7 @@ article {
 
     font-weight: 400;
     text-transform: uppercase;
-    color: #888;
+    color: $tcm-dark-grey;
 
     @include breakpoint (small only) {
       text-align: center;
@@ -271,7 +273,7 @@ article {
 
     font-weight: 300;
     text-transform: uppercase;
-    color: #888;
+    color: $tcm-dark-grey;
 
     @include breakpoint (small only) {
       text-align: center;
@@ -300,7 +302,7 @@ p {
   font-family: 'Source Sans Pro';
   font-weight: 400;
   font-size: 13pt;
-  color: #777;
+  color: $tcm-grey;
 
   @include breakpoint (small only) {
     font-size: 11pt;
@@ -318,7 +320,7 @@ p {
     transition: color 0.25s ease-in-out, border-bottom-color 0.25s ease-in-out;
 
     &:hover {
-      color: #ed786a;
+      color: $tcm-red;
       border-bottom-color: rgba(255,255,255,0);
     }
   }
@@ -384,7 +386,7 @@ p {
 
 #copyright {
   font-weight: 400;
-  color: #777;
+  color: $tcm-grey;
 
   > span {
     &:last-child {
@@ -409,7 +411,7 @@ figure figcaption {
 		font-size: 11pt;
 		letter-spacing: 0;
 		font-weight: 400;
-		color: #777;
+		color: $tcm-grey;
     text-align: center;
 }
 
@@ -425,7 +427,7 @@ img.center {
 
 .tags {
   h2 {
-    color: #ed786a;
+    color: $tcm-red;
     margin: 0;
     font-size: 1.65em;
     font-weight: 400;
@@ -434,7 +436,7 @@ img.center {
   }
 
   h3 {
-    color: #ed786a;
+    color: $tcm-red;
     margin: 0;
     font-size: 1em;
     letter-spacing: 2px;
@@ -445,13 +447,13 @@ img.center {
     font-size: 1em;
     font-weight: 600;
     text-transform: uppercase;
-    color: #888;
+    color: $tcm-dark-grey;
   }
 }
 
 .category {
   h1 {
-    color: #ed786a;
+    color: $tcm-red;
     margin: 0;
     font-size: 1.65em;
     font-weight: 400;
@@ -473,7 +475,7 @@ h2 {
   margin: 0 0 1.5em 0;
   line-height: 1.75em;
   text-transform: uppercase;
-  color: #888;
+  color: $tcm-dark-grey;
 
   @include breakpoint (small only) {
     font-size: 1.2em;
@@ -482,11 +484,11 @@ h2 {
     margin: 0 0 1.5em 0;
     font-weight: 600;
     text-transform: uppercase;
-    color: #888;
+    color: $tcm-dark-grey;
   }
 
   > a {
-    color: #888;
+    color: $tcm-dark-grey;
   }
 }
 
@@ -496,7 +498,7 @@ h3 {
   margin: 0 0 1.25em 0;
   font-weight: 600;
   text-transform: uppercase;
-  color: #888;
+  color: $tcm-dark-grey;
 
   @include breakpoint (small only) {
     text-align: center;
@@ -518,7 +520,7 @@ strong {
     display: block;
     text-align: left;
     margin: 1em;
-    color: #888;
+    color: $tcm-dark-grey;
 
     @include breakpoint (small only) {
       display: inline;
