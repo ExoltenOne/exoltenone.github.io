@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "IT emigration to the USA - FSharp and D3.js shows you where people goes"
-date:   2017-01-09 04:00:00
+date:   2017-01-10 03:00:00
 category: programming
 tags: [fsharp,d3js]
 excerpt_separator: <!--more-->
@@ -15,7 +15,7 @@ links:
   - name: D3.js library page
     address: https://d3js.org/
   - name: My GitHub account with the code
-    address: https://github.com/ExoltenOne/TheCodeManual/tree/master/ProjectFileAnalyzer
+    address: https://github.com/ExoltenOne/TheCodeManual/tree/master/WorkInUS/WorkInUS
 ---
 
 <a href="{{ site.baseurl }}{{page.url}}" class="image image-full">
@@ -283,7 +283,7 @@ links:
 {% endhighlight %}
 
 <p>
-  And here you have the result:
+  And here you have the result and <a href="{{ site.url }}/examples/visaCitiesMap.html">the online version</a>:
 </p>
 
 <figure class="article-image">
