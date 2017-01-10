@@ -617,3 +617,35 @@ i {
     margin: auto;
   }
 }
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:2px solid $tcm-red;
+    margin: 0 auto;
+
+    font-family: 'Source Sans Pro';
+    font-weight: 300;
+    font-size: 11pt;
+    color: #767676;
+}
+
+th{
+    border:2px solid $tcm-red;
+}
+
+td{
+    border:1px solid $tcm-red;
+    text-align: left !important;
+    padding: 2px;
+}
+
+ul {
+  > li {
+    text-align: justify;
+    font-family: 'Source Sans Pro';
+    font-weight: 400;
+    font-size: 13pt;
+    color: #767676;
+  }
+}
